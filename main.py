@@ -70,12 +70,13 @@ def blackjack():
         
         new_card = input("Do you want to draw new card press yes or no :").lower()
         
-        if new_card == "yes":
+        while new_card == "yes":
             user_cards.append(random.choice(cards))
             user_score = calculate_score(user_cards)
             print(f"your cards : {user_cards}")
+            new_card = input("Do you want to draw new card press yes or no :").lower()
             
-        while computer_score < 17 and computer_score != 0:
+        while computer_score < 17 and computer_score!=0:
             computer_cards.append(random.choice(cards))
             computer_score = calculate_score(computer_cards)
     
